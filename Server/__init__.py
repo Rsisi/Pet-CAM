@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 import os
 from flask import Flask, request, jsonify
 
@@ -20,26 +18,4 @@ def upload_image():
 
 if __name__ == "__main__":
     app.run(debug=True)
-=======
 
-import os
-from flask import Flask, request, jsonify
-
-UPLOAD_FOLDER = '/Users/TonyS/Project/Patronus/Patronus/Server/Upload'
-ALLOWED_EXTENSIONS = set('jpg')
-
-app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
-@app.route("/", methods=["GET" ,"POST"])
-def upload_image():
-    if request.method == 'POST':
-        image = request.files['image']
-        image.save(os.path.join(app.config['UPLOAD_FOLDER'], '2.jpg'))
-
-    return jsonify({'msg': 'success'})
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
->>>>>>> 48cb49affcd9dfa81c636b50a239f7893ad417c1
